@@ -123,7 +123,7 @@ class Demo:
             Common.failure_screenshot(self, driver, "DMP Test Case E Cart item Count in Cart logo")
             pytest.fail("1 Item count Showing in Cart Logo : Fail")
 
-    @allure.step("dmp login test case E")
+    @allure.step("dmp login test case F")
     def dmp_test_case_f(self, url, username, password, driver):
         Demo.url_hit(self, url, driver)
         Demo.wait_for_login_element(self, driver)
@@ -140,7 +140,7 @@ class Demo:
             Common.failure_screenshot(self, driver, "DMP Test Case F Item Not Displayed in Cart")
             pytest.fail("Item Displayed in Cart : Fail")
 
-    @allure.step("dmp login test case E")
+    @allure.step("dmp login test case G")
     def dmp_test_case_g(self, url, username, password,name,lastname,postalcode,driver):
         Demo.url_hit(self, url, driver)
         Demo.wait_for_login_element(self, driver)

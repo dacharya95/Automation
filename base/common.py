@@ -29,20 +29,6 @@ class Common(object):
             raise
 
 
-    def file_path(self, path):
-        return str(os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, path)))
-
-    def multiple_file_upload(self, driver, locator, path, element_name):
-        element_detail = {"element_name": element_name, "element_locator": locator[1], "path": path,
-                          "element_type": locator[0]}
-
-        try:
-            el = driver.find_element(locator[0],locator[1])
-            el.send_keys(path)
-        except:
-            Common.failure_screenshot(self, driver, element_name)
-            raise
-
     def send_text(self, driver, locator, text, element_name):
         element_detail = {"element_name": element_name, "element_locator": locator[1], "element_type": locator[0],
                           "send_text": text}
@@ -65,16 +51,6 @@ class Common(object):
             Common.failure_screenshot(self, driver, element_name)
             raise
 
-    def clear(self, driver, locator, element_name):
-        element_detail = {"element_name": element_name, "element_locator": locator[1], "element_type": locator[0]}
-
-        try:
-            el = driver.find_element(locator[0],locator[1])
-            el.click()
-            el.clear()
-        except:
-            Common.failure_screenshot(self, driver, element_name)
-            raise
 
     def get_element(self, driver, locator, element_name, multiple=True):
         element_detail = {"element_name": element_name, "element_locator": locator[1], "element_type": locator[0]}
@@ -94,17 +70,6 @@ class Common(object):
                 Common.failure_screenshot(self, driver, element_name)
                 raise
 
-    def open_new_window_with_url(self, driver, url):
-        driver.execute_script('window.open("{}","_blank");'.format(url))
-
-    def open_new_window(self, driver):
-        driver.execute_script("window.open('');")
-
-
-    def switch_to_window(self, driver, count):
-        driver.switch_to.window(driver.window_handles[count])
-        driver.set_window_size(width="1920", height="1080")
-
 
     def get_text(self, driver, locator, element_name):
         element_detail = {"element_name": element_name, "element_locator": locator[1], "element_type": locator[0]}
@@ -116,12 +81,6 @@ class Common(object):
             Common.failure_screenshot(self, driver, element_name)
             raise
 
-
-    def refresh(self, driver):
-        driver.refresh()
-
-    def close(self, driver):
-        driver.close()
 
     def get_url(self, driver, url):
         driver.get(url)
@@ -167,7 +126,6 @@ class Common(object):
             Common.failure_screenshot(self, driver, element_name)
             raise
 
-
     def get_attribute(self, driver, locator, element_name):
         element_detail = {"element_name": element_name, "element_locator": locator[1], "element_type": locator[0]}
 
@@ -187,7 +145,6 @@ class Common(object):
         except:
             Common.failure_screenshot(self, driver, element_name)
             raise
-
 
     def double_click(self, driver, locator, element_name):
         element_detail = {"element_name": element_name, "element_locator": locator[1], "element_type": locator[0]}
@@ -219,35 +176,11 @@ class Common(object):
             Common.failure_screenshot(self, driver, element_name)
             raise
 
-
-    def click_element_from_list_using_count(self, driver, locator, element_name, count):
-        element_detail = {"element_name": element_name, "element_locator": locator[1], "element_type": locator[0]}
-
-        try:
-            el = driver.find_elements(locator[0],locator[1])
-            el[count].click()
-        except:
-            Common.failure_screenshot(self, driver, element_name)
-            raise
-
     def switch_to_frame(self, driver, framename):
         driver.switch_to.frame(framename)
 
     def close(self, driver):
         driver.close()
-
-    def switch_to_frame_using_xpath(self, driver, locator, element_name):
-        element_detail = {"element_name": element_name, "element_locator": locator[1], "element_type": locator[0]}
-        try:
-            el = driver.find_element(locator[0],locator[1])
-            driver.switch_to.frame(el)
-        except:
-            Common.failure_screenshot(self, driver, element_name)
-            raise
-
-    def scroll_using_co(self, driver, value):
-        driver.execute_script("window.scrollTo(0," + value + ")")
-
 
     def failure_screenshot(self, driver, name):
         element_detail = {"Screenshot_name": name}

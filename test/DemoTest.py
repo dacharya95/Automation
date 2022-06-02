@@ -34,7 +34,7 @@ class TestDemo:
         Demo.dmp_test_case_c(self, Env.pageurl,'test_test', Env.userPass, driver)
 
     @allure.description("Verify with Logout Functionality")
-    @allure.severity(allure.severity_level.BLOCKER)
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_d_logout_functionality(self, driver):
         Demo.dmp_test_case_d(self, Env.pageurl, Env.userId, Env.userPass, driver)
 
@@ -44,11 +44,11 @@ class TestDemo:
         Demo.dmp_test_case_e(self, Env.pageurl, Env.userId, Env.userPass, driver)
 
     @allure.description("Verify Remove Item from cart")
-    @allure.severity(allure.severity_level.BLOCKER)
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_f_remove_item_from_cart(self, driver):
         Demo.dmp_test_case_f(self, Env.pageurl, Env.userId, Env.userPass, driver)
 
     @allure.description("Verify place order")
-    @allure.severity(allure.severity_level.BLOCKER)
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_g_place_order(self, driver):
         Demo.dmp_test_case_g(self, Env.pageurl, Env.userId, Env.userPass,"Dwaita","Acharya","400080", driver)

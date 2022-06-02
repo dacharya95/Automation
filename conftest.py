@@ -22,8 +22,7 @@ ALLURE_ENVIRONMENT_PROPERTIES_FILE = 'environment.properties'
 
 @pytest.fixture
 def driver():
-    chrome_options = Options()
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.maximize_window()
     yield driver
     if sys.exc_info()[0]:

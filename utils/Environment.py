@@ -1,6 +1,5 @@
 from utils.Credential import *
 
-
 class Environment:
     env = Cred
     pageurl = env.PgaeUrl
