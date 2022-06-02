@@ -1,0 +1,27 @@
+from selenium.webdriver.common.by import By
+
+class LocateElement(object):
+    UsernameInput = By.ID, "user-name"
+    UserPass=By.ID,"password"
+    LoginButton=By.ID,"login-button"
+    AfterLoginText=By.XPATH,"//span[text()='Products']"
+    Cart=By.XPATH,"//a[@class='shopping_cart_link']"
+    ErrorMessage=By.XPATH,"//h3[contains(text(),'Username and password do not match')]"
+    OpenMenu=By.XPATH,"//button[text()='Open Menu']"
+    LogoutButton=By.XPATH,"//a[text()='Logout']"
+    Addtocart=By.XPATH,"//button[contains(text(),'Add to cart')]"
+    CartItem=By.XPATH,"//div[@id='shopping_cart_container']//span[text()='1']"
+    GotoCart=By.XPATH,"//div[@id='shopping_cart_container']//a[@class='shopping_cart_link']"
+    ItemInCart=By.XPATH,"//div[@class='cart_list']//div[text()='Sauce Labs Backpack']"
+    RemoveItem=By.XPATH,"//button[text()='Remove']"
+    Checkout=By.XPATH,"//button[text()='Checkout']"
+    Name=By.ID,"first-name"
+    LastName=By.ID,"last-name"
+    PostalCode=By.ID,"postal-code"
+    Continue=By.ID,"continue"
+    PaymentInfo=By.XPATH,"//div[text()='Payment Information:']"
+    Bill=By.XPATH,"//div[contains(text(),'Total')]"
+    Finish=By.XPATH,"//button[text()='Finish']"
+    SuccessCheckout=By.XPATH,"//span[contains(text(),'Checkout: Complete')]"
+    OrderSuccess=By.XPATH,"//h2[contains(text(),'THANK YOU FOR YOUR ORDER')]"
+
